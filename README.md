@@ -1,6 +1,7 @@
 # 👶 Baby Monitor System
 
-Arduino-based infant temperature monitoring system with automatic SMS alerts. Continuously monitors baby's body temperature using MAX6675 thermocouple sensor and sends instant SMS notification via SIM900A GSM module when temperature reaches or exceeds 38°C.
+Arduino-based infant temperature monitoring system with automatic SMS alerts.  
+Continuously monitors baby's body temperature using MAX6675 thermocouple sensor and sends instant SMS notification via SIM900A GSM module when temperature reaches or exceeds 38°C.
 
 ---
 
@@ -49,6 +50,10 @@ This Baby Monitor System is designed to help parents monitor their infant's body
 
 ## 🔌 Circuit Diagram
 
+📄 [Download Circuit Diagram PDF](Documentation/Baby_Monitor_Circuit.pdf)
+
+*(You can also view the diagram in the project documentation)*
+
 ---
 
 ## 🚀 Installation
@@ -59,14 +64,49 @@ This Baby Monitor System is designed to help parents monitor their infant's body
 
 ### Steps
 1. Clone this repository
-
 2. Open `Code/Baby_Monitor.ino` in Arduino IDE
 3. Install required library:
    - Go to **Sketch** → **Include Library** → **Manage Libraries**
    - Search for "MAX6675" and install
-4. Update phone number in code:
-   ```cpp
-   // Replace with your phone number
-   GSM_SERIAL.println("AT+CMGS=\"+967XXXXXXXXX\"");
+4. Update phone number in code
+5. Select board: **Arduino Mega 2560**
+6. Upload code to your Arduino
+
+---
+
+## 📱 Usage
+
+1. Power on the system
+2. System starts monitoring automatically
+3. If temperature ≥ 38°C:
+   - SMS alert sent immediately
+   - After 60 seconds, system attempts to call
+   - Call ends after 60 seconds
+4. When temperature returns to normal, system resets
+
+---
+
+## 📁 Code Structure
+
+| File | Description |
+|------|-------------|
+| `Code/Baby_Monitor.ino` | Main program with temperature monitoring and GSM control |
+
+---
+
+## 🔮 Future Improvements
+
+- Add LCD display for local temperature reading
+- Integrate with IoT platforms for cloud monitoring
+- Add multiple phone numbers for alerts
+- Include humidity monitoring
+- Battery backup option
+- Mobile app integration
+
+---
+
+## 📄 License
+
+This project is for educational purposes only.
 
    
