@@ -1,7 +1,6 @@
 # 👶 Baby Monitor System
-
-Arduino-based infant temperature monitoring system with automatic SMS alerts.  
-Continuously monitors baby's body temperature using MAX6675 thermocouple sensor and sends instant SMS notification via SIM900A GSM module when temperature reaches or exceeds 38°C.
+**A modular and reliable Arduino-based infant temperature monitoring system with automatic SMS and call alerts.**  
+Continuously monitors a baby's body temperature using a MAX6675 thermocouple sensor and sends instant notifications via SIM900A GSM module when temperature reaches or exceeds 38°C.
 
 ---
 
@@ -10,8 +9,9 @@ Continuously monitors baby's body temperature using MAX6675 thermocouple sensor 
 - [Features](#features)
 - [Hardware Components](#hardware-components)
 - [Circuit Diagram](#circuit-diagram)
+- [System Images](#system-images)
 - [Installation](#installation)
-- [Usage](#usage)
+- [Usage & Operation Flow](#usage--operation-flow)
 - [Code Structure](#code-structure)
 - [Future Improvements](#future-improvements)
 - [License](#license)
@@ -19,13 +19,12 @@ Continuously monitors baby's body temperature using MAX6675 thermocouple sensor 
 ---
 
 ## 🎯 Overview
-
-This Baby Monitor System is designed to help parents monitor their infant's body temperature remotely. When the temperature rises above the safe threshold (38°C), the system automatically sends an SMS alert and optionally makes a phone call to notify parents immediately.
+This Baby Monitor System is designed to help parents monitor their infant's body temperature remotely.  
+When the temperature rises above the safe threshold (38°C), the system automatically sends an SMS alert and optionally makes a phone call to notify parents immediately.
 
 ---
 
 ## ✨ Features
-
 - **Real-time temperature monitoring** using MAX6675 thermocouple sensor
 - **SMS alert** when temperature ≥ 38°C
 - **Automatic phone call** option after SMS
@@ -49,40 +48,46 @@ This Baby Monitor System is designed to help parents monitor their infant's body
 ---
 
 ## 🔌 Circuit Diagram
-
-📄 [Download Circuit Diagram PDF](Documentation/Baby_Monitor_Circuit.pdf)
-
+📄 [Download Circuit Diagram PDF](Documentation/Baby_Monitor_Circuit.pdf)  
 *(You can also view the diagram in the project documentation)*
+
+---
+
+## 🖼 System Images
+![Working Principle](working%20principle.jpg)  
+*System overview showing temperature monitoring and SMS alert flow.*
 
 ---
 
 ## 🚀 Installation
 
 ### Prerequisites
-- Arduino IDE (latest version)
+- Arduino IDE (latest version)  
 - MAX6675 library (install via Library Manager)
 
 ### Steps
-1. Clone this repository
-2. Open `Code/Baby_Monitor.ino` in Arduino IDE
-3. Install required library:
-   - Go to **Sketch** → **Include Library** → **Manage Libraries**
-   - Search for "MAX6675" and install
-4. Update phone number in code
-5. Select board: **Arduino Mega 2560**
+1. Clone this repository  
+2. Open `Code/Baby_Monitor.ino` in Arduino IDE  
+3. Install required library:  
+   - Go to **Sketch → Include Library → Manage Libraries**  
+   - Search for `MAX6675` and install  
+4. Update phone number in the code  
+5. Select board: **Arduino Mega 2560**  
 6. Upload code to your Arduino
 
 ---
 
-## 📱 Usage
+## 📱 Usage & Operation Flow
+1. Power on the system  
+2. The system starts monitoring automatically  
+3. **If temperature ≥ 38°C:**  
+   - SMS alert is sent immediately  
+   - After 60 seconds, system attempts a call  
+   - Call ends after 60 seconds  
+4. When temperature returns to normal, the system resets automatically
 
-1. Power on the system
-2. System starts monitoring automatically
-3. If temperature ≥ 38°C:
-   - SMS alert sent immediately
-   - After 60 seconds, system attempts to call
-   - Call ends after 60 seconds
-4. When temperature returns to normal, system resets
+*Step-by-step example:*  
+- Baby temperature rises to 38.5°C → MAX6675 sensor detects → Arduino processes → SIM900A sends SMS → Optional phone call → Status returns to normal when temperature drops.
 
 ---
 
@@ -95,18 +100,14 @@ This Baby Monitor System is designed to help parents monitor their infant's body
 ---
 
 ## 🔮 Future Improvements
-
-- Add LCD display for local temperature reading
-- Integrate with IoT platforms for cloud monitoring
-- Add multiple phone numbers for alerts
-- Include humidity monitoring
-- Battery backup option
-- Mobile app integration
+- Add LCD display for local temperature reading  
+- Integrate with IoT platforms for cloud monitoring  
+- Add multiple phone numbers for alerts  
+- Include humidity monitoring  
+- Battery backup option  
+- Mobile app integration  
 
 ---
 
 ## 📄 License
-
 This project is for educational purposes only.
-
-   
